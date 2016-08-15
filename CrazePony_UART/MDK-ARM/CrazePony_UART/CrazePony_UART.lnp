@@ -1,0 +1,23 @@
+--cpu Cortex-M3
+"crazepony_uart\startup_stm32f103xb.o"
+"crazepony_uart\stm32f1xx_hal_tim.o"
+"crazepony_uart\stm32f1xx_hal_rcc.o"
+"crazepony_uart\stm32f1xx_hal_uart.o"
+"crazepony_uart\stm32f1xx_hal_cortex.o"
+"crazepony_uart\stm32f1xx_hal_gpio.o"
+"crazepony_uart\stm32f1xx_hal_flash_ex.o"
+"crazepony_uart\stm32f1xx_hal_pwr.o"
+"crazepony_uart\stm32f1xx_hal.o"
+"crazepony_uart\stm32f1xx_hal_rcc_ex.o"
+"crazepony_uart\stm32f1xx_hal_flash.o"
+"crazepony_uart\stm32f1xx_hal_tim_ex.o"
+"crazepony_uart\stm32f1xx_hal_gpio_ex.o"
+"crazepony_uart\stm32f1xx_hal_dma.o"
+"crazepony_uart\main.o"
+"crazepony_uart\stm32f1xx_it.o"
+"crazepony_uart\stm32f1xx_hal_msp.o"
+"crazepony_uart\system_stm32f1xx.o"
+--library_type=microlib --strict --scatter "CrazePony_UART\CrazePony_UART.sct"
+--diag_suppress=L6329 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "CrazePony_UART.map" -o CrazePony_UART\CrazePony_UART.axf
