@@ -1,0 +1,6 @@
+-c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include --C99
+-I "C:\Users\admin\Documents\GitSource\Stm32-CubeMX\Tutorial Cube MX 9 DAC ADC USART on STM32F4Discovery\MDK-ARM\RTE"
+-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include
+-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
+-D__UVISION_VERSION="516" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx --C99
+-o "tutorial cube mx 9 dac adc usart on stm32f4discovery\main.o" --omf_browse "tutorial cube mx 9 dac adc usart on stm32f4discovery\main.crf" --depend "tutorial cube mx 9 dac adc usart on stm32f4discovery\main.d" "../Src/main.c"

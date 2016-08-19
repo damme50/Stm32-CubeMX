@@ -95,7 +95,8 @@ int main(void)
 //		HAL_UART_Transmit_IT(&huart1, (uint8_t *)stringBuffer, 15);
 //		HAL_Delay(500); // do something according your code
 		
-		// ex2 : put interrupt Rx/Tx in ISR - stm32f4xx_it.c
+		// ex2 : put interrupt Rx in ISR - stm32f4xx_it.c /polling for Tx 
+		HAL_UART_Transmit_IT(&huart1, (uint8_t *)stringBuffer, 15);
 		HAL_Delay(500); // do something according your code
   /* USER CODE BEGIN 3 */
 

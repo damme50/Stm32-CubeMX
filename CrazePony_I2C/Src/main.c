@@ -45,13 +45,12 @@ UART_HandleTypeDef huart1;
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
 
-uint8_t Data[2], DeviceID, IST8310 = 0x13;
+uint8_t Data[2], DeviceID, IST8310_ID[2];
 uint8_t i2cDevice[255];
 char* stringBuffer = "Device : 0x";
 char* stringBuffer1 = "\r\n";
 char* stringYES = "O";
-#define IST8310_ADDRESS  0x0C
-#define IST8310_WHOAMI  0x00
+ 
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -110,7 +109,7 @@ int main(void)
 	for (uint8_t i = 0; i < 255; ++i){
 			i2cDevice[i] = 0xF0; 
 	}
-		
+	
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -118,16 +117,18 @@ int main(void)
   while (1)
   {
   /* USER CODE END WHILE */
-		HAL_I2C_Master_Transmit(&hi2c1, IST8310_ADDRESS, IST8310_WHOAMI, 1, 50);
-		HAL_I2C_Master_Receive(&hi2c1, IST8310_ADDRESS, &IST8310, 1, 50);
-		HAL_Delay(500);
-
 		Data[0] = 0x00;
+		IST8310_ID[0] = 0xF1;  
+		HAL_I2C_Master_Transmit(&hi2c1, IST8310_ADDRESS, Data, 1, 50);
+		HAL_I2C_Master_Receive(&hi2c1, IST8310_ADDRESS, IST8310_ID, 1, 50);
+		HAL_Delay(100);
+
+		
 		for (uint8_t i = 0; i < 255; ++i)
 		{
 			DeviceID = 0xF1;
 			HAL_I2C_Master_Transmit(&hi2c1, i, Data, 1, 50);
-			HAL_Delay(5);
+			HAL_Delay(1);
 			HAL_I2C_Master_Receive(&hi2c1, i, &DeviceID, 1, 50);
 			i2cDevice[i] = DeviceID; 
 //			if (DeviceID != 0){

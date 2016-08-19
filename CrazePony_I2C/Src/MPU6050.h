@@ -352,3 +352,6 @@
 
 
 #define MS5611_ADDR         0xEE
+
+#define IST8310_ADDRESS		0x1D
+#define IST8310_WHOAMI		0x00
